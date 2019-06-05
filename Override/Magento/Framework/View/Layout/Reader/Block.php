@@ -4,6 +4,7 @@ namespace Siyu\BlockPatch\Override\Magento\Framework\View\Layout\Reader;
 use Magento\Framework\App;
 use Magento\Framework\Data\Argument\InterpreterInterface;
 use Magento\Framework\View\Layout;
+use Magento\Framework\View\Layout\Reader\Visibility\Condition;
 
 
 class Block extends \Magento\Framework\View\Layout\Reader\Block
@@ -25,6 +26,7 @@ class Block extends \Magento\Framework\View\Layout\Reader\Block
      * @param Layout\Argument\Parser $argumentParser
      * @param Layout\ReaderPool $readerPool
      * @param InterpreterInterface $argumentInterpreter
+     * @param Condition $conditionReader
      * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
      * @param \Magento\Framework\App\ScopeResolverInterface $scopeResolver
      * @param string|null $scopeType
@@ -34,6 +36,7 @@ class Block extends \Magento\Framework\View\Layout\Reader\Block
         Layout\Argument\Parser $argumentParser,
         Layout\ReaderPool $readerPool,
         InterpreterInterface $argumentInterpreter,
+        Condition $conditionReader,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Framework\App\ScopeResolverInterface $scopeResolver,
         $scopeType = null
@@ -42,6 +45,7 @@ class Block extends \Magento\Framework\View\Layout\Reader\Block
             $argumentParser,
             $readerPool,
             $argumentInterpreter,
+            $conditionReader,
             $scopeType
         );
         $this->scopeConfig = $scopeConfig;
